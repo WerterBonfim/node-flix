@@ -1,0 +1,17 @@
+version: "3.7"
+
+services:
+  db-mongo:
+    container_name: flix.db.mongo
+    restart: always
+    image: nodeflix-mongodb
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+    - MONGO_INITDB_ROOT_USERNAME=mongo
+    - MONGO_INITDB_ROOT_PASSWORD=!123Senha
+    ports:
+      - 27017:27017       
+
+    
